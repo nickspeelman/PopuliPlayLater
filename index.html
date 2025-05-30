@@ -8,16 +8,6 @@
       font-family: sans-serif;
       max-width: 720px;
       margin: 2em auto;
-      line-height: 1.6;<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>PopuliPlayLater</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      max-width: 720px;
-      margin: 2em auto;
       line-height: 1.6;
       color: #333;
     }
@@ -81,95 +71,6 @@
   <h2>📺 Video Support</h2>
   <p>
     PopuliPlayLater now supports video! It adds “⬇ Save Video” buttons for Video.js players that declare downloadable MP4 sources. Videos using streaming-only formats (like <code>blob:</code> or <code>.m3u8</code>) may not be supported.
-  </p>
-
-  <h2>⚠️ Important Notes</h2>
-  <ul>
-    <li>This tool is for use by currently authorized Populi users only.</li>
-    <li>It does not scrape or extract data — it only adds download links to media already present on the page.</li>
-    <li>Some browsers may open the file in a new tab instead of downloading. If that happens, right-click the button and choose <strong>“Save link as…”</strong>.</li>
-  </ul>
-
-  <div class="disclaimer">
-    <strong>Disclaimer:</strong>
-    PopuliPlayLater is intended for <em>authorized Populi users</em> to enhance personal, educational access to course media. It does not bypass authentication, access controls, or modify Populi’s servers or services. Use in accordance with your institution’s policies, Populi’s Terms of Service, Acceptable Use Policy, and applicable copyright law.
-    <p>Please do not share or redistribute saved content.</p>
-    <p>If Populi, your institution, or a content owner requests removal or discontinuation of this tool, I will promptly comply.</p>
-  </div>
-
-  <h2>📫 Contact</h2>
-  <p>
-    This tool was created to support accessibility and offline learning for students using Populi. If you have questions, concerns, or believe this page should be taken down, please reach out directly:
-  </p>
-  <ul>
-    <li>Email: <a href="mailto:nick@nickspeelman.com">nick@nickspeelman.com</a></li>
-  </ul>
-  <p>All reasonable requests will be responded to promptly and respectfully.</p>
-</body>
-</html>
-
-      color: #333;
-    }
-    code {
-      background: #f5f5f5;
-      padding: 0.1em 0.3em;
-      border-radius: 3px;
-    }
-    a.bookmarklet {
-      display: inline-block;
-      padding: 10px 14px;
-      background-color: #007BFF;
-      color: white;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 6px;
-      margin: 1em 0;
-    }
-    a.bookmarklet:hover {
-      background-color: #0056b3;
-    }
-    .disclaimer {
-      background: #fff3cd;
-      padding: 1em;
-      border: 1px solid #ffeeba;
-      border-radius: 5px;
-      color: #856404;
-      margin-top: 2em;
-    }
-    h1, h2 {
-      color: #222;
-    }
-  </style>
-</head>
-<body>
-  <h1>🎧📺 PopuliPlayLater</h1>
-
-  <p>
-    PopuliPlayLater is a simple browser tool that adds a “<strong>Save for Study</strong>” button next to audio and video players on your Populi course pages. It’s designed to support students who need to review lectures offline or with the help of assistive technologies.
-  </p>
-
-  <p>
-    It works entirely in your own browser, on pages you are already authorized to access, and does not bypass any restrictions or authentication.
-  </p>
-
-  <h2>🛠 How to Install</h2>
-  <ol>
-    <li>Drag the button below to your bookmarks bar:</li>
-    <li>
-      <a class="bookmarklet" href="javascript:(function(){function createDownloadLink(mediaEl,label,fileName){const src=mediaEl.src;if(!src||src.startsWith('blob:'))return;const link=document.createElement('a');link.href=src;link.download=fileName;link.textContent=label;link.className='download-button-added';link.style.marginLeft='10px';link.style.fontSize='14px';link.style.textDecoration='none';link.style.color='#007BFF';link.style.fontWeight='bold';link.onclick=e=>{e.preventDefault();const a=document.createElement('a');a.href=src;a.download=fileName;document.body.appendChild(a);a.click();document.body.removeChild(a);};return link;}document.querySelectorAll('div.js-audio-player').forEach(player=>{const audio=player.querySelector('audio');if(!audio||player.querySelector('.download-button-added'))return;const fileName=audio.src.split('/').pop().split('?')[0];const link=createDownloadLink(audio,'⬇ Save for Study',fileName);const controls=player.querySelector('.audio-player-controls-wrapper');if(controls&&link)controls.appendChild(link);});document.querySelectorAll('video').forEach(video=>{if(!video||video.classList.contains('download-button-added'))return;const fileName='video-'+(video.dataset.mediaId||'lecture')+'.mp4';const link=createDownloadLink(video,'⬇ Save Video',fileName);if(!link)return;link.style.display='block';link.style.marginTop='6px';video.parentElement.appendChild(link);video.classList.add('download-button-added');});})();">⬇ Save for Study</a>
-    </li>
-  </ol>
-
-  <h2>📚 How to Use It</h2>
-  <ol>
-    <li>Visit your Populi course page with audio or video content.</li>
-    <li>Click the <strong>“⬇ Save for Study”</strong> bookmarklet from your bookmarks bar.</li>
-    <li>Buttons will appear next to each supported player, allowing you to save files for offline study.</li>
-  </ol>
-
-  <h2>📺 Video Support (Beta)</h2>
-  <p>
-    PopuliPlayLater now supports video! It adds “⬇ Save Video” buttons for any video elements with downloadable links. Some Populi videos are streamed via temporary <code>blob:</code> URLs, which can’t be saved directly by the browser. In those cases, the tool skips the video (no error will appear). If you see no button, the file likely uses this format.
   </p>
 
   <h2>⚠️ Important Notes</h2>
